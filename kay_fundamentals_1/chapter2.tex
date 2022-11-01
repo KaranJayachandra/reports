@@ -1,0 +1,21 @@
+An estimator is said to be unbiased when on average the estimator yields the true value for any range of values that the estimated parameter can take. Mathematically, this can be written as shown in equation \ref{eq:unbiased} where $g(\mathbf{x})$ is the estimator.
+
+\begin{equation}
+    \mathcal{E}(\hat{\theta}) = \int g(\mathbf{x}) p(\mathbf{x}; \theta) d\mathbf{x} = \theta \qquad \forall \qquad \theta \in \left(a, b\right)
+    \label{eq:unbiased}
+\end{equation}
+
+An unbiased estimator does not imply a good estimator but only that it converges on average to the true value. However, an biased estimator always leads to poor results. Therefore, to judge the quality of an estimator, we would need to define some optimality criterion.
+
+\subsection{Minimum Variance Criterion}
+
+A natural choice for the optimality is the estimtaor that minimizes the mean square error. However, these estimators are generally difficult to find. Consider the mean square error are shown in equation \ref{eq:mvu_case}.
+
+\begin{equation}
+    \begin{split}
+        \text{mse}(\hat{\mathbf{\theta}}) &= \mathcal{E}\left\{(\hat{\theta} - \theta)^2\right\} \\
+        &= \mathcal{E} \left[\left\{(\hat{\theta} - \mathcal{E}(\hat{\theta})) + (\mathcal{E}(\hat{\theta}) - \theta)\right\}^2\right] \\
+        &= \text{var}(\hat{\theta}) + \left[\mathcal{E}(\hat{\theta}) - \theta\right]^2
+    \end{split}
+    \label{eq:mvu_case}
+\end{equation}
